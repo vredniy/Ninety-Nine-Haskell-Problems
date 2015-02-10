@@ -1,10 +1,10 @@
 main :: IO()
 
-pack :: Eq t => [t] -> [(Int, t)]
+encode :: Eq t => [t] -> [(Int, t)]
 
-pack (x:xs) =
-  [(succ $ length $ takeWhile (==x) xs, x)] ++ pack (dropWhile (==x) xs)
+encode (x:xs) =
+  [(succ $ length $ takeWhile (==x) xs, x)] ++ encode (dropWhile (==x) xs)
 
-pack [] = []
+encode [] = []
 
-main = putStrLn $ "Pack: " ++ (show (pack "aaaabccaadeeee"))
+main = putStrLn $ "encode: " ++ (show (encode "aaaabccaadeeee"))
