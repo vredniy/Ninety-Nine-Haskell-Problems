@@ -9,7 +9,7 @@ remove' (x:xs) index i a =
   else [a !! index] ++ remove' xs (succ index) i a;
 
 dropEvery :: [a] -> Int -> [a]
-dropEvery a i = remove' a 0 3 a
+dropEvery a i = remove' a 0 i a
 
 
 main = print $ dropEvery "abcdefghik" 3
