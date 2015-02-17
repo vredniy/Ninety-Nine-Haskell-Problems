@@ -7,7 +7,7 @@ encodeModified list@(x:xs) = [pack $ takeWhile (==x) list] ++ encodeModified (dr
 encodeModified "" = [Single ' ']
 
 pack :: [Char] -> MultipleOrSingle
-pack list@(x:xs)
+pack list@(x:_)
   | (length list) > 1 = Multiple(length $ takeWhile (==x) list, x)
   | otherwise = Single x
 

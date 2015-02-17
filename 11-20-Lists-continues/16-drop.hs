@@ -2,7 +2,7 @@ main :: IO()
 
 remove' :: [a] -> Int -> Int -> [a] -> [a]
 remove' [] _ _ _ = []
-remove' (x:xs) index i a =
+remove' (_:xs) index i a =
 -- TODO: refactor this :shit:
   if (index + 1) `mod` i == 0
   then [] ++ remove' xs (succ index) i a;
